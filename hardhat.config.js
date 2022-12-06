@@ -9,7 +9,7 @@ require("hardhat-contract-sizer");
 const privKeys = (process.env.PRIVATE_KEYS) ? process.env.PRIVATE_KEYS.split(' ') : undefined;
 
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.8.4",
   networks: {
     local: {
       url: process.env.ETH_ENDPOINT || 'http://localhost:8545',
@@ -19,7 +19,7 @@ module.exports = {
       // }
     },
     goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+      url: `https://eth-goerli.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: privKeys,
       // accounts: {
       //   mnemonic: process.env.MNEMONIC,
@@ -34,15 +34,15 @@ module.exports = {
     },
   },
   gasReporter: {
-    enabled: process.env.REPORT_GAS=== "true" ? true : false,
+    enabled: process.env.REPORT_GAS === "true" ? true : false,
     currency: 'USD',
-    gasPrice: process.env.GAS_PRICE? process.env.GAS_PRICE: 30,
+    gasPrice: process.env.GAS_PRICE ? process.env.GAS_PRICE : 30,
     coinmarketcap: process.env.COINMARKETCAP_KEY
   },
   etherscan: {
     apiKey: process.env.ETHEREUMSCAN_KEY,
   },
   contractSizer: {
-    only: ['GoldSale', 'GoldToken'],
+    only: ['SwapLite', 'Math/GoldToken'],
   }
 };

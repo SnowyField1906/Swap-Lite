@@ -1,7 +1,6 @@
 {
   "name": "swap-lite",
   "version": "1.0.0",
-  "description": "the hardhat template for solidity project",
   "main": "hardhat.config.js",
   "scripts": {
     "compile": "npx hardhat compile",
@@ -62,5 +61,8 @@
     "solcoverage",
     "prettier",
     "contract size"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
